@@ -1,7 +1,5 @@
 import datetime
 
-from collections import OrderedDict
-
 from django.conf import settings
 
 from django_remote_forms import logger, widgets
@@ -25,7 +23,7 @@ class RemoteField(object):
         self.form_initial_data = form_initial_data
 
     def as_dict(self):
-        field_dict = OrderedDict()
+        field_dict = {}
         field_dict['title'] = self.field.__class__.__name__
         field_dict['required'] = self.field.required
         field_dict['label'] = self.field.label
